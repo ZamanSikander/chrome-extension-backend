@@ -7,7 +7,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-const PORT = 3000; // Local server will run on http://localhost:3000
+// Use environment PORT if available, otherwise default to 3000
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
